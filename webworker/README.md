@@ -27,11 +27,11 @@ ArrayBuffer 对应一段内存（二进制内容），为了操作这段内存�
 二是运算并给某段内存赋值。
 
 当我们有两个线程对同一个内存地址进行 +1 操作的时候，假设线程是先后顺序运行的，为了简化模型，我们可以如下图表示：
-![示意图]: https://pic3.zhimg.com/80/v2-08e1199c5d22d824dc33b4ededf88d1a_720w.jpg
+![示意图](https://pic3.zhimg.com/80/v2-08e1199c5d22d824dc33b4ededf88d1a_720w.jpg)
 
 上面两个线程的运行结果也符合我们的预期，即线程分别都对同一地址进行了 +1 操作，最后得到结果3。
 但因为两个线程是同时运行的，往往会发生下图所表示的问题，即**读取与写入可能不在一个事务中发生**：
-![示意图]: https://pic1.zhimg.com/80/v2-7919e5412ac2c20a16e30f1650fb5988_720w.jpg
+![示意图](https://pic1.zhimg.com/80/v2-7919e5412ac2c20a16e30f1650fb5988_720w.jpg)
 
 ### [Atomics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)
 为了解决上述的竞争问题，浏览器提供了 Atomics API，这组 API 是一组原子操作，可以将读取和写入绑定起来，
