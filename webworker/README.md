@@ -17,7 +17,7 @@ ArrayBuffer 对应一段内存（二进制内容），为了操作这段内存�
 
 *注意：ArrayBuffer 中的二进制流被翻译成各种视图的时候采用小端还是大端是由即硬件决定的，绝大部分情况下是采用小端字节顺序*
 
-![What?](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4040463523,2146107919&fm=26&gp=0.jpg '什么“小端”、“大端”？？？'){:width="100"}
+!['什么“小端”、“大端”？？？'](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4040463523,2146107919&fm=26&gp=0.jpg =100x100)
 
 
 这段内存可以在不同的 Worker 之间共享，但是内存的共享又会产生另外的问题，也就是**竞争的问题**（race Conditions）：
